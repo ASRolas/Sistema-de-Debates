@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Registro</title>
+  </head>
+  <body>
+<br>
+    <div class="row">
+      <div class="col-sm-4 offset-md-4">
+
+         	<div class="admin-form">
+         		<div class="admin-form-title">Criar conta</div>
+         		<div class="admin-form-body">
+                    <form name="form" id="form" action="/create/" method="post">
+                        {% csrf_token %}
+                        <!--{{form.as_p}}-->
+                        <div class="form-group mt-4">Usuario: {{reg.usuario}}</div>
+                        <div class="form-group mt-4">Senha: {{reg.senha}}</div>
+                        <input type="submit" class="btn btn-success" value="Salvar">
+                    </form>
+         		</div>
+
+         	</div>
+                <div class="col-8 m-auto pt-3 pb-2 text-center">
+                    <a href="/autenticar" class="btn btn-success">Autenticar</a>
+                    <a href="/" class="btn btn-info">inicio</a>
+                </div>
+
+
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
